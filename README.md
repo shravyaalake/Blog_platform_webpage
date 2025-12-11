@@ -14,7 +14,7 @@ A web-based tool that generates complete blog articles using the Gemini AI API.
 📦 Installation
 
 1. Clone the repository
-git clone https://github.com/Avaneesh-alake/ai-blog-generator
+git clone https://github.com/shravyaalake/Blog_platform_webpage.git
 cd ai-blog-generator
 
 2. Install dependencies
