@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>AI Blog Generator</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <div class="page-shell">
+        <!-- Soft gradient background -->
+        <div class="bg-gradient"></div>
+
+        <!-- Top navigation -->
+        <header class="top-nav">
+            <div class="logo">
+                <span class="logo-mark">✍️</span>
+                <span class="logo-text">BlogCraft</span>
+            </div>
+            <div class="nav-meta">
+                <span class="pill pill-quiet">Student Project · AI Blog Studio</span>
+                <span class="pill pill-accent">Powered by Gemini API</span>
+            </div>
+        </header>
+
+        <!-- Main layout -->
+        <main class="main-layout">
+            <!-- LEFT: generator + blog (reader-friendly side) -->
+            <section class="panel panel-right">
+                <div class="generator-card">
+                    <div class="generator-header">
+                        <h2>Generate a blog</h2>
+                        <p class="generator-subtitle">
+                            Describe your topic. Optionally, tweak tone and length.
+                        </p>
+                    </div>
+
+                    <div class="field-group">
+                        <label for="prompt">Blog topic or prompt</label>
+                        <textarea id="prompt" rows="5"
+                            placeholder="E.g., The role of cloud computing in modern startups..."></textarea>
+                    </div>
+
+                    <div class="field-row">
+                        <div class="field-group small">
+                            <label for="toneSelect">Tone</label>
+                            <select id="toneSelect">
+                                <option value="neutral" selected>Neutral & informative</option>
+                                <option value="casual">Casual & friendly</option>
+                                <option value="formal">Formal & academic</option>
+                                <option value="persuasive">Persuasive & marketing-style</option>
+                            </select>
+                        </div>
+                        <div class="field-group small">
+                            <label for="lengthSelect">Length</label>
+                            <select id="lengthSelect">
+                                <option value="medium" selected>~1000 words</option>
+                                <option value="short">~600 words</option>
+                                <option value="long">~1500 words</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="actions-row">
+                        <button id="generateBtn" class="primary-btn">
+                            <span class="btn-label">Generate Blog</span>
+                            <span class="btn-spinner" aria-hidden="true"></span>
+                        </button>
+
+                        <button id="clearBtn" class="ghost-btn" type="button">
+                            Clear
+                        </button>
+                    </div>
+
+                    <p id="status" class="status-text"></p>
+                </div>
+
+                <section class="blog-section" id="blogSection">
+                    <div class="blog-header">
+                        <div>
+                            <h2>Generated Blog</h2>
+                            <p class="blog-subtitle">
+                                Your article appears here once generation is complete.
+                            </p>
+                        </div>
+                        <div class="blog-actions">
+                            <button id="copyBtn" class="icon-btn" type="button">
+                                📋 <span>Copy</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <article id="blogContent" class="blog-content"></article>
+                </section>
+            </section>
+
+            <!-- RIGHT: hero / explanation -->
+            <section class="panel panel-left">
+                <h1 class="hero-title">
+                    Turn any idea into a polished blog
+                    <span class="hero-highlight">in seconds.</span>
+                </h1>
+                <p class="hero-subtitle">
+                    Type a topic, choose your tone, and let AI craft a structured,
+                    ~1000-word article with headings and readable paragraphs.
+                </p>
+
+                <div class="feature-grid">
+                    <div class="feature-card">
+                        <h3>Structured output</h3>
+                        <p>
+                            Auto-generated titles, section headings, and paragraphs that
+                            read like a real blog post.
+                        </p>
+                    </div>
+                    <div class="feature-card">
+                        <h3>Student-friendly</h3>
+                        <p>
+                            Built with a free LLM API, clean code, and a focus on simple
+                            deployment for assignments.
+                        </p>
+                    </div>
+                    <div class="feature-card">
+                        <h3>Instant drafts</h3>
+                        <p>
+                            Use it to prepare first drafts for essays, posts, and reports
+                            you can refine later.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="hint-row">
+                    <span class="hint-label">Try one of these prompts</span>
+                    <div class="prompt-chips">
+                        <button class="prompt-chip" data-value="Impact of AI on education">
+                            Impact of AI on education
+                        </button>
+                        <button class="prompt-chip" data-value="Sustainable living tips for urban professionals">
+                            Sustainable living tips for urban professionals
+                        </button>
+                        <button class="prompt-chip" data-value="How electric vehicles are changing transportation">
+                            How electric vehicles are changing transportation
+                        </button>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="page-footer">
+            <p>
+                Built with LOVE ·
+                <span class="muted">Frontend: HTML, CSS, JS · Backend: Node + Express</span>
+            </p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
